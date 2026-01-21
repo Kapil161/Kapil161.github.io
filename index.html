@@ -1,2 +1,364 @@
-<h1>Welcome to Kapil Portfolio</h1>
-<p>This is my official website</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapil Tyagi | Software Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #004e92;
+            --secondary-color: #000428;
+            --accent-color: #fca311;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #333 !important;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .btn-custom {
+            background-color: var(--accent-color);
+            color: #000;
+            font-weight: 600;
+            padding: 10px 30px;
+            border-radius: 30px;
+            border: none;
+            transition: transform 0.2s;
+        }
+        .btn-custom:hover {
+            transform: scale(1.05);
+            background-color: #e0910f;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title h2 {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        /* Skills */
+        .skill-badge {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 5px;
+            display: inline-block;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .skill-badge i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+
+        /* Experience Cards */
+        .timeline-card {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+        .timeline-card:hover {
+            transform: translateY(-5px);
+        }
+        .timeline-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px 5px 0 0;
+        }
+        .company-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .project-badge {
+            background-color: #eef2f5;
+            color: var(--secondary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">KT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container">
+            <h1>Hi, I'm Kapil Tyagi</h1>
+            <p class="mt-3">Software Developer | .NET Specialist | Full-Stack Engineer</p>
+            <p class="mb-4 small">Building scalable web applications with C#, SQL Server, and Azure.</p>
+            <a href="#contact" class="btn btn-custom">Hire Me</a>
+            <a href="#" class="btn btn-outline-light ms-2" onclick="alert('Ideally, link your PDF resume here!')">Download CV</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <p class="lead text-muted">
+                        Software Developer with over 3 years & 7 months of experience in designing, developing, and maintaining scalable web applications.
+                    </p>
+                    <p>
+                        I have a proven ability to deliver high-quality solutions within deadlines while ensuring performance, reliability, and maintainability. My core expertise lies in .NET technologies, C#, SQL, and RESTful APIs, combined with strong analytical and problem-solving abilities. I am committed to process optimization and driving innovation through efficient code.
+                    </p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-map-marker-alt text-primary me-2"></i> <strong>Location:</strong> Sonipat, Haryana (India)</li>
+                                <li><i class="fas fa-envelope text-primary me-2"></i> <strong>Email:</strong> tyagikapil914@gmail.com</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-phone text-primary me-2"></i> <strong>Phone:</strong> +91-9896571072</li>
+                                <li><i class="fas fa-graduation-cap text-primary me-2"></i> <strong>Education:</strong> MCA (2021)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="mb-4">
+                        <h5 class="text-secondary mb-3">Backend & Database</h5>
+                        <span class="skill-badge"><i class="fab fa-microsoft"></i> C# / .NET</span>
+                        <span class="skill-badge"><i class="fas fa-server"></i> ASP.NET MVC</span>
+                        <span class="skill-badge"><i class="fas fa-database"></i> SQL Server</span>
+                        <span class="skill-badge"><i class="fas fa-code"></i> Web APIs</span>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="text-secondary mb-3">Frontend</h5>
+                        <span class="skill-badge"><i class="fab fa-html5"></i> HTML5 & CSS3</span>
+                        <span class="skill-badge"><i class="fab fa-js"></i> JavaScript / jQuery</span>
+                        <span class="skill-badge"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                        <span class="skill-badge"><i class="fas fa-laptop-code"></i> AJAX</span>
+                        <span class="skill-badge"><i class="fab fa-angular"></i> Angular (Basics)</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="text-secondary mb-3">Tools & Cloud</h5>
+                        <span class="skill-badge"><i class="fab fa-microsoft"></i> Azure</span>
+                        <span class="skill-badge"><i class="fab fa-github"></i> GitHub / Git</span>
+                        <span class="skill-badge"><i class="fas fa-sync"></i> CI/CD</span>
+                        <span class="skill-badge"><i class="fas fa-project-diagram"></i> Requirement Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+
+            <div class="card timeline-card">
+                <div class="timeline-header d-flex justify-content-between align-items-center flex-wrap">
+                    <span class="company-name">Maco Infotech Ltd.</span>
+                    <span class="badge bg-light text-dark">Nov 2023 - Present</span>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Full-Stack Developer</h5>
+                    <p class="card-text small text-muted"><strong>Tech Stack:</strong> C#, SQL Server, ASP.Net, JavaScript, Ajax, jQuery, Azure</p>
+                    
+                    <div class="mt-3">
+                        <h6><span class="project-badge">Project 1</span> Inventory Management System</h6>
+                        <ul>
+                            <li>Involved in end-to-end development to streamline requisition, purchasing, and stock management.</li>
+                            <li>Designed modules for vendor management, PO generation, and cost analysis.</li>
+                            <li>Ensured data accuracy through real-time stock tracking and inventory reports.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6><span class="project-badge">Project 2</span> Human Resource Management System (HRMS)</h6>
+                        <ul>
+                            <li>Designed a comprehensive HRMS to automate employee processes.</li>
+                            <li>Implemented modules for attendance tracking, leave management, and role-based access control.</li>
+                            <li>Collaborated with cross-functional teams to enhance system scalability using ASP.NET MVC.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card timeline-card">
+                <div class="timeline-header d-flex justify-content-between align-items-center flex-wrap">
+                    <span class="company-name">Disgen International Pvt. Ltd.</span>
+                    <span class="badge bg-light text-dark">Apr 2022 - Nov 2023</span>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Software Developer</h5>
+                    <p class="card-text small text-muted"><strong>Tech Stack:</strong> C#, SQL Server, ASP.Net, Web API, HTML, CSS</p>
+                    
+                    <div class="mt-3">
+                        <h6><span class="project-badge">Project 1</span> Release Order Management System (ROMS)</h6>
+                        <ul>
+                            <li>Developed core functionalities for order creation, document management, and multi-level approvals.</li>
+                            <li>Managed railway tenders and approval workflows with email-based notifications.</li>
+                            <li>Conducted defect fixes, code reviews, and unit testing.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6><span class="project-badge">Project 2</span> National Minorities Development (NMDFC)</h6>
+                        <ul>
+                            <li>Streamlined loan processing for minority communities from beneficiaries to State Agencies.</li>
+                            <li>Developed secure workflows for document verification and approval processes.</li>
+                            <li>Performed requirement analysis and security checks to ensure data integrity.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="education" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <h5 class="text-primary">Master of Computer Application (MCA)</h5>
+                        <p class="mb-0">Deenbandhu Chhotu Ram University</p>
+                        <small class="text-muted">May 2021</small>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <h5 class="text-primary">Bachelor of Computer Application (BCA)</h5>
+                        <p class="mb-0">Deenbandhu Chhotu Ram University</p>
+                        <small class="text-muted">May 2019</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="mb-4">Currently open for new opportunities in Software Development.</p>
+            <div class="social-links">
+                <a href="mailto:tyagikapil914@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/Kapil-Tyagi/26247/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="tel:+919896571072"><i class="fas fa-phone"></i></a>
+            </div>
+            <div class="mt-4 small">
+                &copy; 2026 Kapil Tyagi. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
